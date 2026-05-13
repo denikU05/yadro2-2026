@@ -1,8 +1,15 @@
-cmake_minimum_required(VERSION 4.0)
-project(yadro1)
+cmake_minimum_required(VERSION 3.15)
+project(yadro2)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(yadro2 main.cpp
+set(SOURCES
+        Simulation.cpp
         Simulation.h
-        Simulation.cpp)
+        main.cpp
+)
+
+list(TRANSFORM SOURCES PREPEND src/)
+
+# Console app
+add_executable(tape_sort ${SOURCES})
